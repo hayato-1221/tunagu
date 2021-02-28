@@ -15,6 +15,7 @@ class VisitHistoriesController < ApplicationController
   # GET /visit_historys/new
   def new
     @visit_history = VisitHistory.new(visit_history_params)
+    @visit_history.build_medical_treatment_history
   end
 
   # GET /visit_historys/1/edit
@@ -59,6 +60,6 @@ class VisitHistoriesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def visit_history_params
-    params.require(:visit_history).permit(:visit_date, :client_id)
+    params.require(:visit_history).permit(:visit_date, :client_id, medical_treatment_history_attributes: [:user_id, :subjective])
   end
 end

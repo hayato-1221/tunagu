@@ -14,6 +14,13 @@
     <%= f.label :visit_date %>
     <%= f.date_field :visit_date, class: 'form-control' %>
   </div>
+  <%= f.fields_for :medical_treatment_history do |m_f| %>
+    <%= m_f.hidden_field :user_id, :value => current_user.id %>
+    <div class="form-group">
+      <%= m_f.label :subjective %>
+      <%= m_f.text_area :subjective, class: 'form-control' %>
+    </div>
+  <% end %>
   <div class="form-group">
     <%= f.submit "登録", class: 'btn btn-primary' %>
   </div>
