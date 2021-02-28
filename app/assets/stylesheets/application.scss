@@ -1,0 +1,79 @@
+/*
+ *= require_tree .
+ *= require_self
+ */
+
+@import "bootstrap/scss/bootstrap";
+
+$fa-font-path: '@fortawesome/fontawesome-free/webfonts';
+@import "@fortawesome/fontawesome-free/scss/fontawesome";
+@import "@fortawesome/fontawesome-free/scss/regular";
+
+/* 全体 */
+
+body {
+  padding-top: 56px;
+}
+
+.base-container {
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.base-bg-color {
+  background-color: #5D99FB;
+}
+
+.nav-link {
+  font-size: 0.8rem;
+}
+
+.text-title {
+  text-align: center;
+}
+
+.text-card-container {
+  padding-left: 9px;
+  padding-right: 9px;
+  margin-bottom: 50px;
+}
+
+.search-form {
+  max-width: 350px;
+
+
+  .search-icon {
+    position: absolute;
+    top: 30%;
+    left: 5%;
+    z-index: 100;
+  }
+
+  .text-search {
+    height: 50px;
+    padding-left: 50px;
+  }
+}
+
+
+/* max-width */
+
+.mw-md {
+  max-width: 720px;
+}
+
+.mw-lg {
+  max-width: 960px;
+}
+
+.mw-xl {
+  max-width: 1200px;
+}
+
+.alert-notice {
+  @extend .alert-success;
+}
+
+.alert-alert {
+  @extend .alert-danger;
+}
