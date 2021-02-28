@@ -3,6 +3,5 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   root "texts#index"
   resources :texts
-  resources :movies
   devise_for :users
 end

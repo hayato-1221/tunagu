@@ -41,14 +41,6 @@ ActiveRecord::Schema.define(version: 2021_02_01_091606) do
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
 
-  create_table "movies", force: :cascade do |t|
-    t.string "genre"
-    t.string "title"
-    t.string "url"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "texts", force: :cascade do |t|
     t.string "genre"
     t.string "title"

@@ -5,14 +5,14 @@ default: &default
 
 development:
   <<: *default
-  database: team_project_41_development
+  database: tunagu_development
 
 test:
   <<: *default
-  database: team_project_41_test
+  database: tunagu_test
 
 production:
   <<: *default
-  database: team_project_production
-  username: team_project
+  database: tunagu_production
+  username: tunagu
   password: <%= ENV['TEAM_PROJECT_DATABASE_PASSWORD'] %>
