@@ -14,7 +14,7 @@ class VisitHistoriesController < ApplicationController
 
   # GET /visit_historys/new
   def new
-    @visit_history = VisitHistory.new
+    @visit_history = VisitHistory.new(visit_history_params)
   end
 
   # GET /visit_historys/1/edit
@@ -24,7 +24,7 @@ class VisitHistoriesController < ApplicationController
   # POST /visit_historys
   # POST /visit_historys.json
   def create
-    @visit_history = VisitHistory.new(visit_history_params)
+    @visit_history = current_user.visit_histories.new(visit_history_params)
 
     if @visit_history.save
       redirect_to @visit_history, notice: "VisitHistory was successfully created."
@@ -59,6 +59,6 @@ class VisitHistoriesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def visit_history_params
-    params.require(:visit_history).permit(:visit_date)
+    params.require(:visit_history).permit(:visit_date, :client_id)
   end
 end
