@@ -10,6 +10,7 @@ class ClientsController < ApplicationController
   # GET /clients/1
   # GET /clients/1.json
   def show
+    @visit_histories = @client.visit_histories
   end
 
   # GET /clients/new
@@ -24,7 +25,7 @@ class ClientsController < ApplicationController
   # POST /clients
   # POST /clients.json
   def create
-    @client = Client.new(client_params)
+    @client = current_user.clients.new(client_params)
 
     if @client.save
       redirect_to @client, notice: "Client was successfully created."
@@ -54,11 +55,11 @@ class ClientsController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_client
-    @client = Client.find(params[:id])
+    @client = current_user.clients.find(params[:id])
   end
 
   # Only allow a list of trusted parameters through.
   def client_params
-    params.require(:client).permit(:name)
+    params.require(:client).permit(:name, :gender, :age, :address)
   end
 end

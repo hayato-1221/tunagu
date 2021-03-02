@@ -4,7 +4,7 @@ class VisitHistoriesController < ApplicationController
   # GET /visit_historys
   # GET /visit_historys.json
   def index
-    @visit_historys = VisitHistory.all
+    @visit_histories = VisitHistory.all
   end
 
   # GET /visit_historys/1
@@ -60,6 +60,6 @@ class VisitHistoriesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def visit_history_params
-    params.require(:visit_history).permit(:visit_date, :client_id, medical_treatment_history_attributes: [:user_id, :subjective])
+    params.require(:visit_history).permit(:visit_date, :fee, :client_id, medical_treatment_history_attributes: [:user_id, :subjective, :objective, :assessment, :plan, :memo])
   end
 end

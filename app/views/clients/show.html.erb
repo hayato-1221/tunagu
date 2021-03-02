@@ -1,4 +1,28 @@
 <p id="notice"><%= notice %></p>
-<%= link_to "通院履歴", new_visit_history_path(visit_history: { client_id: @client.id } ) %>
-<%= link_to 'Edit', edit_client_path(@client) %> |
-<%= link_to 'Back', clients_path %>
+<div>
+  <%= link_to "通院日登録", new_visit_history_path(visit_history: { client_id: @client.id } ) %>
+</div>
+<div>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">日付</th>
+        <th scope="col">金額</th>
+        <th scope="col">施術記録</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @visit_histories.each do |h| %>
+        <tr>
+          <td><%= h.visit_date %></td>
+          <td><%= h.fee %></td>
+          <td><%= link_to "詳細",  medical_treatment_history_path(h.medical_treatment_history) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<div>
+  <%= link_to 'Edit', edit_client_path(@client) %> |
+  <%= link_to 'Back', clients_path %>
+  <div>

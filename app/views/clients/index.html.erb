@@ -3,10 +3,10 @@
 </div>
 <form class="mb-3 mx-auto search-form">
   <div class="form-group">
-    <label class="sr-only" for="text-search">教材を探す</label>
+    <label class="sr-only" for="text-search">クライアント検索</label>
     <div class="input-group">
       <i class="fa fa-search search-icon" aria-hidden="true"></i>
-      <input type="text-search" class="form-control text-search" id="text-search" placeholder="教材を探す">
+      <input type="text-search" class="form-control text-search" id="text-search" placeholder="クライアント検索">
     </div>
   </div>
 </form>
@@ -18,6 +18,9 @@
           <svg class="bd-placeholder-img card-img-top" width="100%" height="200" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text></svg>
           <div class="card-body">
             <p class="card-text"><%= client.name %></p>
+            <p><%= client.gender %></p>
+            <p><%= client.age %>歳</p>
+            <p><%= client.address %></p>
           </div>
         <% end %>
       </div>

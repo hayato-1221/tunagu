@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resources :texts
   resources :clients
   resources :visit_histories
+  resources :medical_treatment_histories
 end
