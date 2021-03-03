@@ -10,6 +10,7 @@ class VisitHistoriesController < ApplicationController
   # GET /visit_historys/1
   # GET /visit_historys/1.json
   def show
+    @visit_history
   end
 
   # GET /visit_historys/new
