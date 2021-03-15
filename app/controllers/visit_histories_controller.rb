@@ -49,7 +49,7 @@ class VisitHistoriesController < ApplicationController
   # DELETE /visit_historys/1.json
   def destroy
     @visit_history.destroy
-    redirect_to visit_historys_url, notice: "VisitHistory was successfully destroyed."
+    redirect_to visit_histories_url, notice: "VisitHistory was successfully destroyed."
   end
 
   private
