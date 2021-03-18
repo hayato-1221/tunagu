@@ -29,7 +29,7 @@ class VisitHistoriesController < ApplicationController
     @visit_history = current_user.visit_histories.new(visit_history_params)
 
     if @visit_history.save
-      redirect_to @visit_history, notice: "VisitHistory was successfully created."
+      redirect_to client_path(@visit_history.client_id), notice: "VisitHistory was successfully created."
     else
       render :new
     end
@@ -49,7 +49,7 @@ class VisitHistoriesController < ApplicationController
   # DELETE /visit_historys/1.json
   def destroy
     @visit_history.destroy
-    redirect_to visit_histories_url, notice: "VisitHistory was successfully destroyed."
+    redirect_to client_path(@visit_history.client_id), notice: "VisitHistory was successfully destroyed."
   end
 
   private

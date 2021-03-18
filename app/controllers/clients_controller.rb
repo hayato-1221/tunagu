@@ -1,5 +1,6 @@
 class ClientsController < ApplicationController
   before_action :set_client, only: [:show, :edit, :update, :destroy]
+  attr_reader :show
 
   # GET /clients
   # GET /clients.json
