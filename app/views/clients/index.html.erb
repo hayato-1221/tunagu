@@ -19,7 +19,7 @@
           <div class="card-body">
             <p class="card-text">名前：<%= client.name %></p>
             <p>性別：<%= client.gender_i18n %></p>
-            <p>生年月日：<%= client.birth_date %></p>
+            <p>生年月日：<%= I18n.l(client.birth_date, format: :long) %></p>
             <p>年齢：<%= client.age %>歳</p>
             <p>住所：<%= client.address %></p>
           </div>

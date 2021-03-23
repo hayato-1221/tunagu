@@ -20,7 +20,7 @@
   <div class="form-group">
     <%= f.label :birth_date %>
     <br>
-    <%= f.date_select :birth_date, {use_month_numbers: true,start_year: 1970,
+    <%=  f.date_select :birth_date, {use_month_numbers: true,start_year: 1970,
         end_year:Time.now.year,
         prompt:"--",date_separator: '/'}, class: 'form-control', style: 'display: inline-block;width: auto;' %>
   </div>

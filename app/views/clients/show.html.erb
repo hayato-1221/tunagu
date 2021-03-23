@@ -16,7 +16,7 @@
   <tbody>
     <td><%= @client.name %></td>
     <td><%= @client.gender_i18n %></td>
-    <td><%= @client.birth_date %></td>
+    <td><%= I18n.l(@client.birth_date, format: :long) %></td>
     <td><%= @client.age %></td>
     <td><%= @client.address %></td>
   </tbody>

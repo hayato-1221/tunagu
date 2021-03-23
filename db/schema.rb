@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 2021_02_28_152408) do
   create_table "clients", force: :cascade do |t|
     t.string "name"
     t.integer "gender"
-    t.integer "birth_date"
+    t.date "birth_date"
     t.integer "age"
     t.string "address"
     t.bigint "user_id"
