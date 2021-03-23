@@ -1,0 +1,11 @@
+ja:
+  activerecord:
+    models:
+      client: クライアント
+    attributes:
+      client:
+        name: 名前
+        gender: 性別
+        birth_date: 生年月日
+        age: 年齢
+        address: 住所

@@ -13,15 +13,17 @@ $fa-font-path: '@fortawesome/fontawesome-free/webfonts';
 
 body {
   padding-top: 56px;
+  background-color: #E3E3E3;
 }
 
 .base-container {
-  margin: 0 auto;
+  margin: 2rem auto;
   padding: 1rem;
+  background-color: #FBFBFB;
 }
 
 .base-bg-color {
-  background-color: #5D99FB;
+  background-color: #000000;
 }
 
 .nav-link {
@@ -55,6 +57,10 @@ body {
   }
 }
 
+//フッター
+.navbar-dark {
+  color: #FFFFFF;
+}
 
 /* max-width */
 

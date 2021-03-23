@@ -22,6 +22,9 @@ gem 'devise'
 gem 'rails-i18n'
 gem 'devise-i18n'
 
+# enum日本語化
+gem 'enum_help'
+
 #Bootstrap
 gem 'devise-bootstrap-views'
 # マークダウン形式で表示するためのgem

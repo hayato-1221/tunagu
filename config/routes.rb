@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
-  resources :clients
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  root "texts#index"
-  resources :texts
+  root "clients#index"
   devise_for :users
+  resources :texts
+  resources :clients
+  resources :visit_histories
+  resources :medical_treatment_histories
 end

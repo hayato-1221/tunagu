@@ -1,5 +1,6 @@
 class ClientsController < ApplicationController
   before_action :set_client, only: [:show, :edit, :update, :destroy]
+  attr_reader :show
 
   # GET /clients
   # GET /clients.json
@@ -10,6 +11,8 @@ class ClientsController < ApplicationController
   # GET /clients/1
   # GET /clients/1.json
   def show
+    @client
+    @visit_histories = @client.visit_histories
   end
 
   # GET /clients/new
@@ -24,8 +27,7 @@ class ClientsController < ApplicationController
   # POST /clients
   # POST /clients.json
   def create
-    @client = Client.new(client_params)
-
+    @client = current_user.clients.new(client_params)
     if @client.save
       redirect_to @client, notice: "Client was successfully created."
     else
@@ -54,11 +56,11 @@ class ClientsController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_client
-    @client = Client.find(params[:id])
+    @client = current_user.clients.find(params[:id])
   end
 
   # Only allow a list of trusted parameters through.
   def client_params
-    params.require(:client).permit(:name)
+    params.require(:client).permit(:name, :gender, :birth_date, :age, :address)
   end
 end

@@ -14,6 +14,25 @@
     <%= f.text_field :name, class: 'form-control' %>
   </div>
   <div class="form-group">
-    <%= f.submit "登録", class: 'btn btn-primary' %>
+    <%= f.label :gender %>
+    <%= f.select :gender, Client.genders_i18n.invert ,{ include_blank: "選択してください", selected: 0 }, { id: "gender", class: 'form-control' } %>
+  </div>
+  <div class="form-group">
+    <%= f.label :birth_date %>
+    <br>
+    <%=  f.date_select :birth_date, {use_month_numbers: true,start_year: 1970,
+        end_year:Time.now.year,
+        prompt:"--",date_separator: '/'}, class: 'form-control', style: 'display: inline-block;width: auto;' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :age %>
+    <%= f.number_field :age, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :address %>
+    <%= f.text_field :address, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.submit "登録", class: 'btn btn-danger' %>
   </div>
 <% end %>

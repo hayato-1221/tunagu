@@ -1,0 +1,37 @@
+<%= form_with(model: visit_history) do |f| %>
+  <%= f.hidden_field :client_id, :value => visit_history.client_id %>
+  <% if visit_history.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(visit_history.errors.count, "error") %> prohibited this visit_history from being saved:</h2>
+      <ul>
+        <% visit_history.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="form-group">
+    <%= f.label :visit_date %>
+    <%= f.date_field :visit_date, class: 'form-control' %>
+    <%= f.label :fee %>
+    <%= f.number_field :fee, class: 'form-control' %>
+  </div>
+  <%= f.fields_for :medical_treatment_history do |m_f| %>
+    <%= m_f.hidden_field :user_id, :value => current_user.id %>
+    <div class="form-group">
+      <%= m_f.label :subjective %>
+      <%= m_f.text_area :subjective, class: 'form-control' %>
+      <%= m_f.label :objective %>
+      <%= m_f.text_area :objective, class: 'form-control' %>
+      <%= m_f.label :assessment %>
+      <%= m_f.text_area :assessment, class: 'form-control' %>
+      <%= m_f.label :plan %>
+      <%= m_f.text_area :plan, class: 'form-control' %>
+      <%= m_f.label :memo %>
+      <%= m_f.text_area :memo, class: 'form-control' %>
+    </div>
+  <% end %>
+  <div>
+    <%= f.submit "登録", class: 'btn btn-primary' %>
+  </div>
+<% end %>
