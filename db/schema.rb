@@ -67,14 +67,6 @@ ActiveRecord::Schema.define(version: 2021_02_28_152408) do
     t.index ["visit_history_id"], name: "index_medical_treatment_histories_on_visit_history_id"
   end
 
-  create_table "texts", force: :cascade do |t|
-    t.string "genre"
-    t.string "title"
-    t.text "content"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false

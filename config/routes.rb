@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   root "clients#index"
   devise_for :users
-  resources :texts
   resources :clients
   resources :visit_histories
   resources :medical_treatment_histories
