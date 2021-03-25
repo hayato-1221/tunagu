@@ -12,7 +12,7 @@
   <% end %>
   <div class="form-group">
     <%= f.label :visit_date %>
-    <%= f.date_field :visit_date, class: 'form-control' %>
+    <input id="calendar_form" type="text" name="visit_history[visit_date]" placeholder="日付を設定" class="form-control" readonly="readonly">
     <%= f.label :fee %>
     <%= f.number_field :fee, class: 'form-control' %>
   </div>
