@@ -27,6 +27,10 @@ gem 'enum_help'
 
 #Bootstrap
 gem 'devise-bootstrap-views'
+
+# Gon（コントローラから Javascript に変数を渡せるようにする）
+gem 'gon'
+
 # マークダウン形式で表示するためのgem
 gem 'redcarpet', '~> 2.3.0'
 # シンタックスハイライトに対応させるためのgem

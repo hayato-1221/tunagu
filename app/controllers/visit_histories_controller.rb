@@ -27,7 +27,6 @@ class VisitHistoriesController < ApplicationController
   # POST /visit_historys.json
   def create
     @visit_history = current_user.visit_histories.new(visit_history_params)
-
     if @visit_history.save
       redirect_to client_path(@visit_history.client_id), notice: "VisitHistory was successfully created."
     else
