@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_28_152408) do
+ActiveRecord::Schema.define(version: 2021_03_31_093008) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,16 @@ ActiveRecord::Schema.define(version: 2021_02_28_152408) do
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
 
+  create_table "client_earnings", force: :cascade do |t|
+    t.bigint "client_id", null: false
+    t.bigint "earning_id", null: false
+    t.integer "client_monthly_earnings"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["client_id"], name: "index_client_earnings_on_client_id"
+    t.index ["earning_id"], name: "index_client_earnings_on_earning_id"
+  end
+
   create_table "clients", force: :cascade do |t|
     t.string "name"
     t.integer "gender"
@@ -51,6 +61,13 @@ ActiveRecord::Schema.define(version: 2021_02_28_152408) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_clients_on_user_id"
+  end
+
+  create_table "earnings", force: :cascade do |t|
+    t.date "month"
+    t.integer "monthly_earnings"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "medical_treatment_histories", force: :cascade do |t|
@@ -90,4 +107,6 @@ ActiveRecord::Schema.define(version: 2021_02_28_152408) do
     t.index ["user_id"], name: "index_visit_histories_on_user_id"
   end
 
+  add_foreign_key "client_earnings", "clients"
+  add_foreign_key "client_earnings", "earnings"
 end

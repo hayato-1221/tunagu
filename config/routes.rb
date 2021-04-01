@@ -12,4 +12,6 @@ Rails.application.routes.draw do
   resources :clients
   resources :visit_histories
   resources :medical_treatment_histories
+  resources :earnings
+  resources :client_earnings
 end

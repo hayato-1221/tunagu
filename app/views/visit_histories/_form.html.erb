@@ -32,6 +32,9 @@
     </div>
   <% end %>
   <div>
-    <%= f.submit "登録", class: 'btn btn-primary' %>
+    <%= f.submit "登録", class: 'btn btn-danger' %>
+  </div>
+  <div>
+    <%= link_to '戻る', visit_histories_path, class: "btn btn-secondary" %>
   </div>
 <% end %>
